@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>สรุปยอดขาย หมวก และ ผ้าอ้อม | 15/5/69-15/6/69</title>
+<style>
+:root {
+  --bg:#f4f7fb; --panel:#ffffff; --ink:#152033; --muted:#64748b; --line:#e2e8f0;
+  --blue:#155bd5; --green:#078642; --accent:#0f766e; --soft-blue:#e9f1ff; --soft-green:#e7f7ee;
+  --shadow:0 14px 34px rgba(15,23,42,.08); --radius:18px;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family: Tahoma, 'Noto Sans Thai', Arial, sans-serif; color:var(--ink); background:linear-gradient(180deg,#eef4ff 0%,var(--bg) 300px); }
+.container { width:min(1180px, calc(100% - 32px)); margin:0 auto; padding:28px 0 54px; }
+.hero { background:linear-gradient(135deg,#0f3f8f,#0f766e); color:#fff; border-radius:28px; padding:30px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+.hero:after { content:""; position:absolute; right:-90px; top:-90px; width:280px; height:280px; border-radius:50%; background:rgba(255,255,255,.13); }
+.hero h1 { margin:0 0 8px; font-size:clamp(26px,4vw,42px); line-height:1.18; }
+.hero p { margin:0; opacity:.9; font-size:16px; }
+.hero-actions { margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; }
+button, .btn { appearance:none; border:0; border-radius:999px; padding:10px 16px; background:#fff; color:#0f3f8f; font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.btn.dark { background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.3); }
+.tabs { margin:22px 0; display:flex; gap:10px; flex-wrap:wrap; position:sticky; top:0; z-index:10; padding:10px 0; background:rgba(244,247,251,.86); backdrop-filter:blur(10px); }
+.tab-btn { background:#fff; color:#334155; border:1px solid var(--line); box-shadow:0 6px 16px rgba(15,23,42,.05); }
+.tab-btn.active { background:#155bd5; color:#fff; border-color:#155bd5; }
+.tab { display:none; } .tab.active { display:block; }
+.kpis { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; margin:18px 0; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+.card .label { color:var(--muted); font-size:13px; margin-bottom:8px; }
+.card .value { font-size:28px; font-weight:800; letter-spacing:-.02em; }
+.card .note { color:var(--muted); font-size:12px; margin-top:6px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:18px 0; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); margin:16px 0; }
+.section-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:16px; }
+h2 { margin:0 0 5px; font-size:21px; }
+.section-head p, .panel > p { margin:0; color:var(--muted); font-size:13px; }
+.bar-row { display:grid; grid-template-columns:190px 1fr 58px; align-items:center; gap:12px; margin:14px 0; }
+.bar-label strong { display:block; } .bar-label span { color:var(--muted); font-size:12px; }
+.bar-track { height:12px; border-radius:99px; background:#eef2f7; overflow:hidden; }
+.bar-fill { height:100%; border-radius:99px; background:linear-gradient(90deg,var(--blue),var(--accent)); }
+.bar-pct { text-align:right; color:var(--muted); font-size:13px; }
+.table-search { width:min(260px,100%); padding:10px 12px; border:1px solid var(--line); border-radius:12px; font:inherit; }
+.table-wrap { overflow:auto; border:1px solid var(--line); border-radius:14px; }
+table { width:100%; border-collapse:separate; border-spacing:0; min-width:760px; }
+th, td { padding:11px 12px; border-bottom:1px solid var(--line); white-space:nowrap; font-size:13px; }
+th { background:#f8fafc; text-align:left; color:#334155; position:sticky; top:0; z-index:1; }
+tr:hover td { background:#f8fbff; }
+td.num { text-align:right; font-variant-numeric:tabular-nums; }
+td.left { text-align:left; }
+.insights { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.insight { background:#f8fafc; border:1px solid var(--line); border-radius:16px; padding:15px; }
+.insight b { display:block; margin-bottom:5px; }
+.footer { color:var(--muted); font-size:12px; margin-top:24px; text-align:center; }
+@media (max-width:900px) { .kpis { grid-template-columns:repeat(2,1fr); } .grid, .insights { grid-template-columns:1fr; } .bar-row { grid-template-columns:1fr; gap:6px; } .bar-pct { text-align:left; } }
+@media (max-width:560px) { .container { width:min(100% - 20px,1180px); padding-top:10px; } .hero { padding:22px; border-radius:20px; } .kpis { grid-template-columns:1fr; } .section-head { flex-direction:column; } }
+@media print { body { background:#fff; } .tabs,.hero-actions,.table-search { display:none !important; } .tab { display:block !important; } .container { width:100%; padding:0; } .hero,.panel,.card { box-shadow:none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <h1>สรุปยอดขายสินค้า: หมวก และผ้าอ้อม</h1>
+    <p>ช่วงวันที่ 15/5/69-15/6/69 · แยกช่องทางการขาย จำนวนขาย ยอดขายรวม และค่าเฉลี่ยต่อชิ้น</p>
+    <div class="hero-actions">
+      <button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button>
+      <a class="btn dark" href="สรุปยอดขาย_หมวก_ผ้าอ้อม_15-5-69_ถึง_15-6-69.xlsx" download>📊 ดาวน์โหลด Excel</a>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="เลือกหน้า">
+    <button class="tab-btn active" onclick="showTab('hat', this)">🧢 หมวก</button>
+    <button class="tab-btn" onclick="showTab('diaper', this)">🩲 ผ้าอ้อม</button>
+    <button class="tab-btn" onclick="showTab('all', this)">📌 ภาพรวม</button>
+  </nav>
+
+  <section id="all" class="tab">
+    <div class="kpis">
+      <div class="card"><div class="label">ยอดขายหมวก</div><div class="value">109,453.75</div><div class="note">บาท · 192 ชิ้น</div></div>
+      <div class="card"><div class="label">ยอดขายผ้าอ้อม</div><div class="value">65,275.15</div><div class="note">บาท · 1,958 ชิ้น</div></div>
+      <div class="card"><div class="label">ช่องทางหลักของหมวก</div><div class="value">SHOPEE</div><div class="note">80.9% ของยอดขายหมวก</div></div>
+      <div class="card"><div class="label">ช่องทางหลักของผ้าอ้อม</div><div class="value">SHOPEE</div><div class="note">78.9% ของยอดขายผ้าอ้อม</div></div>
+    </div>
+    <div class="grid">
+      <section class="panel"><div class="section-head"><div><h2>หมวก: สัดส่วนยอดขายตามช่องทาง</h2><p>เรียงตามยอดขายรวม</p></div></div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOPEE</strong><span>88,503.12 บาท · 161 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:80.86%"></div></div>
+          <div class="bar-pct">80.9%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>TIKTOK</strong><span>7,937.96 บาท · 11 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7.25%"></div></div>
+          <div class="bar-pct">7.3%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>FACEBOOK</strong><span>5,530.00 บาท · 7 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:5.05%"></div></div>
+          <div class="bar-pct">5.1%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>LAZADA</strong><span>4,629.07 บาท · 9 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:4.23%"></div></div>
+          <div class="bar-pct">4.2%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>AGENT</strong><span>1,273.60 บาท · 2 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:1.16%"></div></div>
+          <div class="bar-pct">1.2%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>INSTAGRAM</strong><span>790.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.72%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOWROOM</strong><span>790.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.72%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div></section>
+      <section class="panel"><div class="section-head"><div><h2>ผ้าอ้อม: สัดส่วนยอดขายตามช่องทาง</h2><p>เรียงตามยอดขายรวม</p></div></div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOPEE</strong><span>51,531.32 บาท · 1,614 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:78.94%"></div></div>
+          <div class="bar-pct">78.9%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>FACEBOOK</strong><span>6,194.00 บาท · 124 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:9.49%"></div></div>
+          <div class="bar-pct">9.5%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>AGENT</strong><span>5,100.00 บาท · 150 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7.81%"></div></div>
+          <div class="bar-pct">7.8%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>LAZADA</strong><span>1,934.02 บาท · 57 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:2.96%"></div></div>
+          <div class="bar-pct">3.0%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>TIKTOK</strong><span>456.81 บาท · 12 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.70%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOWROOM</strong><span>59.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.09%"></div></div>
+          <div class="bar-pct">0.1%</div>
+        </div></section>
+    </div>
+    <section class="panel">
+      <div class="section-head"><div><h2>ข้อสังเกตเร็ว</h2><p>ใช้สำหรับตัดสินใจลงแรงขายและเติมสต็อก</p></div></div>
+      <div class="insights">
+        <div class="insight"><b>🧢 หมวกพึ่งพา Shopee สูง</b>ยอดขายหมวกจาก Shopee คิดเป็น 80.9% ของยอดขายหมวกทั้งหมด</div>
+        <div class="insight"><b>🩲 ผ้าอ้อม Shopee เป็นช่องทางหลัก</b>ผ้าอ้อมขายผ่าน Shopee 1,614 ชิ้น ยอด 51,531.32 บาท</div>
+        <div class="insight"><b>📦 ผ้าอ้อมแบบแพ็คยังสำคัญ</b>ยอดขายแพ็ครวม 702 หน่วยแพ็ค/หน่วย จากยอดขายรวม 1,958 ชิ้น</div>
+      </div>
+    </section>
+  </section>
+
+  <section id="hat" class="tab active">
+    <div class="kpis">
+      <div class="card"><div class="label">จำนวนขายรวม</div><div class="value">192</div><div class="note">ชิ้น</div></div>
+      <div class="card"><div class="label">ยอดขายรวม</div><div class="value">109,453.75</div><div class="note">บาท</div></div>
+      <div class="card"><div class="label">เฉลี่ยต่อชิ้น</div><div class="value">570.07</div><div class="note">บาท/ชิ้น</div></div>
+      <div class="card"><div class="label">ช่องทางยอดสูงสุด</div><div class="value">SHOPEE</div><div class="note">88,503.12 บาท</div></div>
+    </div>
+    <section class="panel"><div class="section-head"><div><h2>สัดส่วนยอดขายหมวกตามช่องทาง</h2><p>ดูช่องทางที่ทำยอดรวมสูงสุด</p></div></div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOPEE</strong><span>88,503.12 บาท · 161 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:80.86%"></div></div>
+          <div class="bar-pct">80.9%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>TIKTOK</strong><span>7,937.96 บาท · 11 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7.25%"></div></div>
+          <div class="bar-pct">7.3%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>FACEBOOK</strong><span>5,530.00 บาท · 7 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:5.05%"></div></div>
+          <div class="bar-pct">5.1%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>LAZADA</strong><span>4,629.07 บาท · 9 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:4.23%"></div></div>
+          <div class="bar-pct">4.2%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>AGENT</strong><span>1,273.60 บาท · 2 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:1.16%"></div></div>
+          <div class="bar-pct">1.2%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>INSTAGRAM</strong><span>790.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.72%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOWROOM</strong><span>790.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.72%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div></section>
+    
+    <section class="panel table-panel">
+      <div class="section-head">
+        <div>
+          <h2>หมวก: สรุปแยกช่องทาง</h2>
+          <p>จำนวนขาย ยอดขายรวม และเฉลี่ยต่อชิ้น</p>
+        </div>
+        <input class="table-search" type="search" placeholder="ค้นหาในตาราง..." oninput="filterTable('hatTable', this.value)">
+      </div>
+      <div class="table-wrap">
+        <table id="hatTable">
+          <thead><tr><th>ช่องทาง</th><th>จำนวนออเดอร์</th><th>จำนวนขาย (ชิ้น)</th><th>ยอดขายรวม (บาท)</th><th>เฉลี่ยต่อชิ้น (บาท)</th><th>สัดส่วนยอดขาย</th></tr></thead>
+          <tbody><tr><td class="left">SHOPEE</td><td class="num">158</td><td class="num">161</td><td class="num">88,503.12</td><td class="num">549.71</td><td class="num">80.9%</td></tr>
+<tr><td class="left">TIKTOK</td><td class="num">11</td><td class="num">11</td><td class="num">7,937.96</td><td class="num">721.63</td><td class="num">7.3%</td></tr>
+<tr><td class="left">FACEBOOK</td><td class="num">7</td><td class="num">7</td><td class="num">5,530.00</td><td class="num">790.00</td><td class="num">5.1%</td></tr>
+<tr><td class="left">LAZADA</td><td class="num">9</td><td class="num">9</td><td class="num">4,629.07</td><td class="num">514.34</td><td class="num">4.2%</td></tr>
+<tr><td class="left">AGENT</td><td class="num">1</td><td class="num">2</td><td class="num">1,273.60</td><td class="num">636.80</td><td class="num">1.2%</td></tr>
+<tr><td class="left">INSTAGRAM</td><td class="num">1</td><td class="num">1</td><td class="num">790.00</td><td class="num">790.00</td><td class="num">0.7%</td></tr>
+<tr><td class="left">SHOWROOM</td><td class="num">1</td><td class="num">1</td><td class="num">790.00</td><td class="num">790.00</td><td class="num">0.7%</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+  <section id="diaper" class="tab">
+    <div class="kpis">
+      <div class="card"><div class="label">จำนวนขายรวม</div><div class="value">1,958</div><div class="note">ชิ้นรวม</div></div>
+      <div class="card"><div class="label">ยอดขายรวม</div><div class="value">65,275.15</div><div class="note">บาท</div></div>
+      <div class="card"><div class="label">เฉลี่ยต่อชิ้น</div><div class="value">33.34</div><div class="note">บาท/ชิ้น</div></div>
+      <div class="card"><div class="label">ช่องทางยอดสูงสุด</div><div class="value">SHOPEE</div><div class="note">51,531.32 บาท</div></div>
+    </div>
+    <section class="panel"><div class="section-head"><div><h2>สัดส่วนยอดขายผ้าอ้อมตามช่องทาง</h2><p>คำนวณจากยอดขายรวม</p></div></div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOPEE</strong><span>51,531.32 บาท · 1,614 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:78.94%"></div></div>
+          <div class="bar-pct">78.9%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>FACEBOOK</strong><span>6,194.00 บาท · 124 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:9.49%"></div></div>
+          <div class="bar-pct">9.5%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>AGENT</strong><span>5,100.00 บาท · 150 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7.81%"></div></div>
+          <div class="bar-pct">7.8%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>LAZADA</strong><span>1,934.02 บาท · 57 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:2.96%"></div></div>
+          <div class="bar-pct">3.0%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>TIKTOK</strong><span>456.81 บาท · 12 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.70%"></div></div>
+          <div class="bar-pct">0.7%</div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-label"><strong>SHOWROOM</strong><span>59.00 บาท · 1 ชิ้น</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0.09%"></div></div>
+          <div class="bar-pct">0.1%</div>
+        </div></section>
+    
+    <section class="panel table-panel">
+      <div class="section-head">
+        <div>
+          <h2>ผ้าอ้อม: สรุปแยกช่องทาง</h2>
+          <p>จำนวนขายคำนวณเป็นชิ้นรวม; แพ็ค 6 ชิ้นถูกแปลงเป็น 6 ชิ้น</p>
+        </div>
+        <input class="table-search" type="search" placeholder="ค้นหาในตาราง..." oninput="filterTable('diaperChannelTable', this.value)">
+      </div>
+      <div class="table-wrap">
+        <table id="diaperChannelTable">
+          <thead><tr><th>ช่องทาง</th><th>จำนวนออเดอร์</th><th>จำนวนขายรวม (ชิ้น)</th><th>ยอดขายรวม (บาท)</th><th>เฉลี่ยต่อชิ้น (บาท)</th><th>สัดส่วนยอดขาย</th></tr></thead>
+          <tbody><tr><td class="left">SHOPEE</td><td class="num">287</td><td class="num">1,614</td><td class="num">51,531.32</td><td class="num">31.93</td><td class="num">78.9%</td></tr>
+<tr><td class="left">FACEBOOK</td><td class="num">20</td><td class="num">124</td><td class="num">6,194.00</td><td class="num">49.95</td><td class="num">9.5%</td></tr>
+<tr><td class="left">AGENT</td><td class="num">2</td><td class="num">150</td><td class="num">5,100.00</td><td class="num">34.00</td><td class="num">7.8%</td></tr>
+<tr><td class="left">LAZADA</td><td class="num">11</td><td class="num">57</td><td class="num">1,934.02</td><td class="num">33.93</td><td class="num">3.0%</td></tr>
+<tr><td class="left">TIKTOK</td><td class="num">1</td><td class="num">12</td><td class="num">456.81</td><td class="num">38.07</td><td class="num">0.7%</td></tr>
+<tr><td class="left">SHOWROOM</td><td class="num">1</td><td class="num">1</td><td class="num">59.00</td><td class="num">59.00</td><td class="num">0.1%</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="panel table-panel">
+      <div class="section-head">
+        <div>
+          <h2>ผ้าอ้อม: สรุปตามประเภทและไซส์</h2>
+          <p>ใช้ดูว่าไซส์ใดขายดีที่สุดโดยไม่แยกช่องทาง</p>
+        </div>
+        <input class="table-search" type="search" placeholder="ค้นหาในตาราง..." oninput="filterTable('diaperSizeTable', this.value)">
+      </div>
+      <div class="table-wrap">
+        <table id="diaperSizeTable">
+          <thead><tr><th>ประเภทขาย</th><th>ไซส์</th><th>จำนวนออเดอร์</th><th>จำนวนแพ็ค/หน่วย</th><th>จำนวนขายรวม (ชิ้น)</th><th>ยอดขายรวม (บาท)</th><th>เฉลี่ยต่อชิ้น (บาท)</th></tr></thead>
+          <tbody><tr><td class="left">ชิ้นเดี่ยว</td><td class="left">L/XL</td><td class="num">86</td><td class="num">325</td><td class="num">325</td><td class="num">11,782.41</td><td class="num">36.25</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">S/M</td><td class="num">60</td><td class="num">127</td><td class="num">127</td><td class="num">5,120.21</td><td class="num">40.32</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">L</td><td class="num">53</td><td class="num">82</td><td class="num">492</td><td class="num">15,740.49</td><td class="num">31.99</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">M</td><td class="num">48</td><td class="num">59</td><td class="num">354</td><td class="num">11,247.16</td><td class="num">31.77</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">S</td><td class="num">18</td><td class="num">19</td><td class="num">114</td><td class="num">3,739.17</td><td class="num">32.80</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">XL</td><td class="num">57</td><td class="num">91</td><td class="num">546</td><td class="num">17,645.71</td><td class="num">32.32</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="panel table-panel">
+      <div class="section-head">
+        <div>
+          <h2>ผ้าอ้อม: รายละเอียดแยกประเภท + ไซส์ + ช่องทาง</h2>
+          <p>ตารางละเอียดสำหรับเช็กช่องทางที่ทำยอดต่อไซส์</p>
+        </div>
+        <input class="table-search" type="search" placeholder="ค้นหาในตาราง..." oninput="filterTable('diaperDetailTable', this.value)">
+      </div>
+      <div class="table-wrap">
+        <table id="diaperDetailTable">
+          <thead><tr><th>ประเภทขาย</th><th>ไซส์</th><th>ช่องทาง</th><th>จำนวนออเดอร์</th><th>จำนวนแพ็ค/หน่วย</th><th>จำนวนขายรวม (ชิ้น)</th><th>ยอดขายรวม (บาท)</th><th>เฉลี่ยต่อชิ้น (บาท)</th></tr></thead>
+          <tbody><tr><td class="left">ชิ้นเดี่ยว</td><td class="left">L/XL</td><td class="left">FACEBOOK</td><td class="num">2</td><td class="num">3</td><td class="num">3</td><td class="num">177.00</td><td class="num">59.00</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">L/XL</td><td class="left">LAZADA</td><td class="num">5</td><td class="num">25</td><td class="num">25</td><td class="num">972.71</td><td class="num">38.91</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">L/XL</td><td class="left">SHOPEE</td><td class="num">78</td><td class="num">296</td><td class="num">296</td><td class="num">10,573.70</td><td class="num">35.72</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">L/XL</td><td class="left">SHOWROOM</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">59.00</td><td class="num">59.00</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">S/M</td><td class="left">FACEBOOK</td><td class="num">2</td><td class="num">13</td><td class="num">13</td><td class="num">767.00</td><td class="num">59.00</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">S/M</td><td class="left">LAZADA</td><td class="num">3</td><td class="num">8</td><td class="num">8</td><td class="num">294.24</td><td class="num">36.78</td></tr>
+<tr><td class="left">ชิ้นเดี่ยว</td><td class="left">S/M</td><td class="left">SHOPEE</td><td class="num">55</td><td class="num">106</td><td class="num">106</td><td class="num">4,058.97</td><td class="num">38.29</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">L</td><td class="left">AGENT</td><td class="num">1</td><td class="num">15</td><td class="num">90</td><td class="num">3,060.00</td><td class="num">34.00</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">L</td><td class="left">FACEBOOK</td><td class="num">3</td><td class="num">3</td><td class="num">18</td><td class="num">875.00</td><td class="num">48.61</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">L</td><td class="left">SHOPEE</td><td class="num">48</td><td class="num">62</td><td class="num">372</td><td class="num">11,348.68</td><td class="num">30.51</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">L</td><td class="left">TIKTOK</td><td class="num">1</td><td class="num">2</td><td class="num">12</td><td class="num">456.81</td><td class="num">38.07</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">M</td><td class="left">FACEBOOK</td><td class="num">6</td><td class="num">6</td><td class="num">36</td><td class="num">1,775.00</td><td class="num">49.31</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">M</td><td class="left">LAZADA</td><td class="num">1</td><td class="num">1</td><td class="num">6</td><td class="num">158.08</td><td class="num">26.35</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">M</td><td class="left">SHOPEE</td><td class="num">41</td><td class="num">52</td><td class="num">312</td><td class="num">9,314.08</td><td class="num">29.85</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">S</td><td class="left">FACEBOOK</td><td class="num">3</td><td class="num">3</td><td class="num">18</td><td class="num">900.00</td><td class="num">50.00</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">S</td><td class="left">SHOPEE</td><td class="num">15</td><td class="num">16</td><td class="num">96</td><td class="num">2,839.17</td><td class="num">29.57</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">XL</td><td class="left">AGENT</td><td class="num">1</td><td class="num">10</td><td class="num">60</td><td class="num">2,040.00</td><td class="num">34.00</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">XL</td><td class="left">FACEBOOK</td><td class="num">4</td><td class="num">6</td><td class="num">36</td><td class="num">1,700.00</td><td class="num">47.22</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">XL</td><td class="left">LAZADA</td><td class="num">2</td><td class="num">3</td><td class="num">18</td><td class="num">508.99</td><td class="num">28.28</td></tr>
+<tr><td class="left">แพ็ค 6 ชิ้น</td><td class="left">XL</td><td class="left">SHOPEE</td><td class="num">50</td><td class="num">72</td><td class="num">432</td><td class="num">13,396.72</td><td class="num">31.01</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+  <div class="footer">สร้างจากไฟล์สรุปยอดขายที่จัดทำจากข้อมูล Lumzum 2026 · อัปเดตไฟล์เว็บเมื่อ 2026-06-25 09:29</div>
+</div>
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function filterTable(tableId, q) {
+  const query = q.trim().toLowerCase();
+  document.querySelectorAll('#' + tableId + ' tbody tr').forEach(tr => {
+    tr.style.display = tr.textContent.toLowerCase().includes(query) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
